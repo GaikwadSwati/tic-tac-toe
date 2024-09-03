@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baskervville SC", serif;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    transform: rotateX(10deg);
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    font-size: 3rem;
+    color: #fff;
+    background-color: #444;
+    border: 3px solid #555;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+span{
+    font-family: "Baskervville SC", serif;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.8);
+    background-color: #555;
+}
+
+.resetButton,
+.newGame {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    margin: 20px;
+    border: 2px solid #07b45e;
+    border-radius: 20px;
+}
+
+.resetButton:hover,
+.newGame:hover {
+    background-color: #777;
+    transform: scale(1.1);
+}
+
+h1 {
+    padding: 20px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#msg {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes zoomOutIn {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.zoom-animation span {
+    display: inline-block;
+    animation: zoomOutIn 1s infinite;
+}
+
+.o-color {
+    color: #c40785;
+}
+
+.x-color {
+    color: #07b45e;
+}
+
+.text{
+    position: absolute;
+    bottom:0;
+    padding-bottom: 30px;
+}
